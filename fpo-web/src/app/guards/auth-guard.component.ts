@@ -35,7 +35,7 @@ export class AuthGuard implements CanActivate {
         window.location.origin + this.location.prepareExternalUrl(state.url);
       if (extUri.substr(-1) != "/") extUri += "/";
       window.location.replace(
-        userInfo.login_uri + "?next=" + encodeURIComponent(extUri)
+        userInfo.login_uri + "?next=" + encodeURIComponent(extUri) + "&kc_idp_hint=idir"
       );
     } else if (userInfo.is_staff) {
       return true;

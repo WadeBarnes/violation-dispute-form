@@ -26,7 +26,7 @@ def get_login_uri(request: Request = None, next: str = None) -> str:
         except NoReverseMatch:
             pass
         if uri and next:
-            uri += "?next=" + escape_uri_path(next)
+            uri += "?next=" + escape_uri_path(next) + "&kc_idp_hint=idir"
     return uri
 
 
